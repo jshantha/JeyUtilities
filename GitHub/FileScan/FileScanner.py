@@ -2,7 +2,7 @@ from github import Github
 
 actk = ""
 base_url = "https://api.github.com"
-file_query = "q=user:jshantha+extension:py"
+file_query = "org:jshantha extension:py"
 
 def process_repos():
     scan_for_files()
@@ -26,4 +26,4 @@ def scan_for_files():
     # Then play with your Github objects:
     print('... Python Repos')
     for repo in g.search_code(query=file_query):
-        print(repo.name)
+        print(repo.repository.name)
